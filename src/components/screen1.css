@@ -1,3 +1,8 @@
+.header{
+    margin: 50px;
+    font-size: 80px;
+}
+
 .body{
     background-color: rgb(32, 35, 41);
     /* display: flex;
@@ -19,8 +24,8 @@
      background-color: rgb(62, 56, 56);
      border-radius: 1rem;
      display: flex;
-     width: 400px;
-     height: 180px;
+     width: 500px;
+     height: 200px;
      align-items: center;
      border-radius: 0.5rem;
 }
@@ -35,7 +40,7 @@
 
 .about{
     width: 100%;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .charactername{
@@ -78,6 +83,10 @@
 }
 
 @media screen and (max-width: 768px){
+    .header{
+        font-size: 45px;
+    }
+    
     .about{
         font-size: 12px;
     }

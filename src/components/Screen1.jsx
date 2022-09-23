@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Character from './Character';
 import './screen1.css';
 const Screen1 = () => {
   const [character, setCharacter] = useState([]);
@@ -22,26 +23,12 @@ const Screen1 = () => {
   const noimg =
     'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png?20200912122019';
   return (
-    <div className="screen1">
-      <div className="header">
-        <h1>The Rick and Morty API</h1>
-      </div>
+    <>
+      <h1 className="header">The Rick and Morty API</h1>
       <div className="body">
         <div className="characters">
           {character.map((show, index) => (
-            <div className="character">
-              <img className="image" src={show?.image ? show.image : noimg} alt="" key={index} />
-              <div className="about">
-                <h1 className="charactername">{show.name}</h1>
-                <p className="status">
-                  {show.status}-{show.species}
-                </p>
-                <p className="greytext">Last known location:</p>
-                <p className="location">{show.location.name}</p>
-                <p className="greytext">First seen in:</p>
-                <p className="origin">{show.origin.name}</p>
-              </div>
-            </div>
+            <Character show={show} index={index} noimg={noimg} />
           ))}
         </div>
       </div>
@@ -53,7 +40,7 @@ const Screen1 = () => {
           <p className="outrotext">EPISODES: {episode.count}</p>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
