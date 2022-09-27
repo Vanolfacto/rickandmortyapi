@@ -12,9 +12,25 @@ const Character = ({ show, index, noimg }) => {
       <img className="image" src={show?.image ? show.image : noimg} alt="" key={index} />
       <div className="about">
         <h1 className="charactername">{show.name}</h1>
-        <p className="status">
-          {show.status}-{show.species}
-        </p>
+
+        {(() => {
+          if (show.status === 'Alive') {
+            return (
+              <div className="status">
+                <div className="circlegreen" id="circle"></div>
+                {show.status}-{show.species}
+              </div>
+            );
+          } else if (show.status === 'Dead') {
+            return (
+              <div className="status">
+                <div className="circlered" id="circle"></div>
+                {show.status}-{show.species}
+              </div>
+            );
+          }
+        })()}
+
         <p className="greytext">Last known location:</p>
         <p className="location">{show.location.name}</p>
         <p className="greytext">First seen in:</p>
