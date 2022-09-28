@@ -28,6 +28,13 @@ const Character = ({ show, index, noimg }) => {
                 {show.status}-{show.species}
               </div>
             );
+          } else if (show.status === 'unknown') {
+            return (
+              <div className="status">
+                <div className="circlegray" id="circle"></div>
+                {show.status}-{show.species}
+              </div>
+            );
           }
         })()}
 
